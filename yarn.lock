@@ -1047,6 +1047,43 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/chain-api@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@metamask/chain-api@workspace:."
+  dependencies:
+    "@lavamoat/allow-scripts": "npm:^3.0.0"
+    "@lavamoat/preinstall-always-fail": "npm:^2.0.0"
+    "@metamask/auto-changelog": "npm:^3.4.3"
+    "@metamask/eslint-config": "npm:^12.2.0"
+    "@metamask/eslint-config-jest": "npm:^12.1.0"
+    "@metamask/eslint-config-nodejs": "npm:^12.1.0"
+    "@metamask/eslint-config-typescript": "npm:^12.1.0"
+    "@types/jest": "npm:^28.1.6"
+    "@types/node": "npm:^16"
+    "@typescript-eslint/eslint-plugin": "npm:^5.43.0"
+    "@typescript-eslint/parser": "npm:^5.43.0"
+    "@yarnpkg/types": "npm:^4.0.0-rc.52"
+    depcheck: "npm:^1.4.3"
+    eslint: "npm:^8.44.0"
+    eslint-config-prettier: "npm:^8.8.0"
+    eslint-plugin-import: "npm:~2.26.0"
+    eslint-plugin-jest: "npm:^27.2.2"
+    eslint-plugin-jsdoc: "npm:^39.9.1"
+    eslint-plugin-n: "npm:^15.7.0"
+    eslint-plugin-prettier: "npm:^4.2.1"
+    eslint-plugin-promise: "npm:^6.1.1"
+    jest: "npm:^28.1.3"
+    jest-it-up: "npm:^2.0.2"
+    prettier: "npm:^2.7.1"
+    prettier-plugin-packagejson: "npm:^2.3.0"
+    ts-jest: "npm:^28.0.7"
+    ts-node: "npm:^10.7.0"
+    tsup: "npm:^7.2.0"
+    typedoc: "npm:^0.23.15"
+    typescript: "npm:~4.8.4"
+  languageName: unknown
+  linkType: soft
+
 "@metamask/eslint-config-jest@npm:^12.1.0":
   version: 12.1.0
   resolution: "@metamask/eslint-config-jest@npm:12.1.0"
@@ -1096,43 +1133,6 @@ __metadata:
   checksum: 10/6edbf4c2fce34ba8ccd873938501744d69cd13c02047655df596ab551f1aaa390513b8df855145d04c7fed6b5d91b9cfd0ce96ee082abf838292df761f50c520
   languageName: node
   linkType: hard
-
-"@metamask/metamask-module-template@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@metamask/metamask-module-template@workspace:."
-  dependencies:
-    "@lavamoat/allow-scripts": "npm:^3.0.0"
-    "@lavamoat/preinstall-always-fail": "npm:^2.0.0"
-    "@metamask/auto-changelog": "npm:^3.4.3"
-    "@metamask/eslint-config": "npm:^12.2.0"
-    "@metamask/eslint-config-jest": "npm:^12.1.0"
-    "@metamask/eslint-config-nodejs": "npm:^12.1.0"
-    "@metamask/eslint-config-typescript": "npm:^12.1.0"
-    "@types/jest": "npm:^28.1.6"
-    "@types/node": "npm:^16"
-    "@typescript-eslint/eslint-plugin": "npm:^5.43.0"
-    "@typescript-eslint/parser": "npm:^5.43.0"
-    "@yarnpkg/types": "npm:^4.0.0-rc.52"
-    depcheck: "npm:^1.4.3"
-    eslint: "npm:^8.44.0"
-    eslint-config-prettier: "npm:^8.8.0"
-    eslint-plugin-import: "npm:~2.26.0"
-    eslint-plugin-jest: "npm:^27.2.2"
-    eslint-plugin-jsdoc: "npm:^39.9.1"
-    eslint-plugin-n: "npm:^15.7.0"
-    eslint-plugin-prettier: "npm:^4.2.1"
-    eslint-plugin-promise: "npm:^6.1.1"
-    jest: "npm:^28.1.3"
-    jest-it-up: "npm:^2.0.2"
-    prettier: "npm:^2.7.1"
-    prettier-plugin-packagejson: "npm:^2.3.0"
-    ts-jest: "npm:^28.0.7"
-    ts-node: "npm:^10.7.0"
-    tsup: "npm:^7.2.0"
-    typedoc: "npm:^0.23.15"
-    typescript: "npm:~4.8.4"
-  languageName: unknown
-  linkType: soft
 
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
