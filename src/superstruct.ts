@@ -1,4 +1,106 @@
-import { Struct, define } from 'superstruct';
+import type { Infer, Context } from 'superstruct';
+import { Struct, define, object as stObject } from 'superstruct';
+import type {
+  ObjectSchema,
+  OmitBy,
+  Optionalize,
+  PickBy,
+  Simplify,
+} from 'superstruct/dist/utils';
+
+declare const ExactOptionalSymbol: unique symbol;
+
+export type ExactOptionalTag = {
+  type: typeof ExactOptionalSymbol;
+};
+
+/**
+ * Exclude type `Type` from the properties of `Obj`.
+ *
+ * ```ts
+ * type Foo = { a: string | null; b: number };
+ * type Bar = ExcludeType<Foo, null>;
+ * // Bar = { a: string, b: number }
+ * ```
+ */
+export type ExcludeType<Obj, Type> = {
+  [K in keyof Obj]: Exclude<Obj[K], Type>;
+};
+
+/**
+ * Make optional all properties that have the `ExactOptionalTag` type.
+ *
+ * ```ts
+ * type Foo = { a: string | ExactOptionalTag; b: number};
+ * type Bar = ExactOptionalize<Foo>;
+ * // Bar = { a?: string; b: number}
+ * ```
+ */
+export type ExactOptionalize<Schema extends object> = OmitBy<
+  Schema,
+  ExactOptionalTag
+> &
+  Partial<ExcludeType<PickBy<Schema, ExactOptionalTag>, ExactOptionalTag>>;
+
+/**
+ * Infer a type from an superstruct object schema.
+ */
+export type ObjectType<Schema extends ObjectSchema> = Simplify<
+  ExactOptionalize<Optionalize<{ [K in keyof Schema]: Infer<Schema[K]> }>>
+>;
+
+/**
+ * Change the return type of a superstruct object struct to support exact
+ * optional properties.
+ *
+ * @param schema - The object schema.
+ * @returns A struct representing an object with a known set of properties.
+ */
+export function object<Schema extends ObjectSchema>(
+  schema: Schema,
+): Struct<ObjectType<Schema>, Schema> {
+  return stObject(schema) as any;
+}
+
+/**
+ * Check if the current property is present in its parent object.
+ *
+ * @param ctx - The context to check.
+ * @returns `true` if the property is present, `false` otherwise.
+ */
+function hasOptional(ctx: Context): boolean {
+  const property: string = ctx.path[ctx.path.length - 1];
+  const parent: Record<string, unknown> = ctx.branch[ctx.branch.length - 2];
+
+  return property in parent;
+}
+
+/**
+ * Augment a struct to allow exact-optional values. Exact-optional values can
+ * be omitted but cannot be `undefined`.
+ *
+ * ```ts
+ * const foo = object({ bar: exactOptional(string()) });
+ * type Foo = Infer<typeof foo>;
+ * // Foo = { bar?: string }
+ * ```
+ *
+ * @param struct - The struct to augment.
+ * @returns The augmented struct.
+ */
+export function exactOptional<Type, Schema>(
+  struct: Struct<Type, Schema>,
+): Struct<Type | ExactOptionalTag, Schema> {
+  return new Struct({
+    ...struct,
+
+    validator: (value, ctx) =>
+      !hasOptional(ctx) || struct.validator(value, ctx),
+
+    refiner: (value, ctx) =>
+      !hasOptional(ctx) || struct.refiner(value as Type, ctx),
+  });
+}
 
 /**
  * Defines a new string-struct matching a regular expression.
