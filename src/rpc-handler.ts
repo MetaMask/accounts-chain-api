@@ -2,7 +2,7 @@ import type { Json, JsonRpcRequest } from '@metamask/utils';
 import { assert } from 'superstruct';
 
 import type { Chain } from './api';
-import type { CaipAssetType, CaipChainId } from './caip-types';
+import type { CaipChainId } from './caip-types';
 import { JsonRpcRequestStruct } from './JsonRpcRequest';
 import { GetBalancesRequestStruct } from './rpc-types';
 
@@ -33,6 +33,7 @@ export async function handleChainRequest(
 ): Promise<Json | void> {
   // We first have to make sure that the request is a valid JSON-RPC request so
   // we can check its method name.
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
   assert(request, JsonRpcRequestStruct);
 
   switch (request.method) {
@@ -42,7 +43,7 @@ export async function handleChainRequest(
       return chain.getBalances(
         request.params.scope as CaipChainId,
         request.params.accounts,
-        request.params.assets as CaipAssetType[],
+        request.params.assets,
       );
     }
 
