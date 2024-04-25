@@ -5,7 +5,7 @@ import { definePattern } from './superstruct';
 
 export const StringNumberStruct = definePattern(
   'StringNumber',
-  /[0-9]+(.[0-9]+)/u,
+  /^[0-9]+(\.[0-9]+)?$/u,
 );
 export type StringNumber = Infer<typeof StringNumberStruct>;
 
