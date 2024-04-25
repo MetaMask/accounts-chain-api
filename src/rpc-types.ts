@@ -9,7 +9,8 @@ import {
   literal,
 } from 'superstruct';
 
-import { CaipChainIdStruct, CaipAssetTypeStruct } from './caip-types';
+import { CaipChainIdStruct } from '@metamask/utils';
+import { CaipAssetTypeStruct } from './caip-types';
 
 export const AmountStruct = object({});
 

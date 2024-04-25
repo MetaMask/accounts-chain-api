@@ -48,7 +48,3 @@ export function isCaipAssetType(value: unknown): value is CaipAssetType {
 export function isCaipAssetId(value: unknown): value is CaipAssetId {
   return is(value, CaipAssetIdStruct);
 }
-
-export { CaipChainIdStruct, CaipNamespaceStruct, CaipReferenceStruct };
-
-export type { CaipChainId, CaipNamespace, CaipReference };
