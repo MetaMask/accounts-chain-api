@@ -48,9 +48,7 @@ export async function handleChainRequest(
     }
 
     default:
-      throw new MethodNotSupportedError(
-        `Method not supported: ${request.method}`,
-      );
+      throw new MethodNotSupportedError(request.method);
   }
 }
 
