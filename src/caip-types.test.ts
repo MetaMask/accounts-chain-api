@@ -1,7 +1,4 @@
-import {
-  isCaipAssetType,
-  isCaipAssetId,
-} from './caip-types';
+import { isCaipAssetType, isCaipAssetId } from './caip-types';
 
 describe('isCaipAssetType', () => {
   // Imported from: https://github.com/ChainAgnostic/CAIPs/blob/main/CAIPs/caip-19.md#test-cases

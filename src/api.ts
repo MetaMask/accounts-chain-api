@@ -1,4 +1,5 @@
 import type { CaipChainId } from '@metamask/utils';
+
 import type { CaipAssetType } from './caip-types';
 import type { BalancesResult } from './types';
 

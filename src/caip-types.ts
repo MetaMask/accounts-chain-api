@@ -1,13 +1,3 @@
-import type {
-  CaipChainId,
-  CaipNamespace,
-  CaipReference,
-} from '@metamask/utils';
-import {
-  CaipChainIdStruct,
-  CaipNamespaceStruct,
-  CaipReferenceStruct,
-} from '@metamask/utils';
 import type { Infer } from 'superstruct';
 import { is, string, pattern } from 'superstruct';
 

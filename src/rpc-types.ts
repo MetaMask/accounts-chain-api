@@ -1,3 +1,4 @@
+import { CaipChainIdStruct } from '@metamask/utils';
 import type { Infer } from 'superstruct';
 import {
   record,
@@ -9,7 +10,6 @@ import {
   literal,
 } from 'superstruct';
 
-import { CaipChainIdStruct } from '@metamask/utils';
 import { CaipAssetTypeStruct } from './caip-types';
 
 export const AmountStruct = object({});
