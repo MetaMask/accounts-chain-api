@@ -1119,7 +1119,7 @@ __metadata:
     jest-it-up: "npm:^2.0.2"
     prettier: "npm:^2.7.1"
     prettier-plugin-packagejson: "npm:^2.3.0"
-    superstruct: "npm:^1.0.3"
+    superstruct: "npm:1.0.3"
     ts-jest: "npm:^28.0.7"
     ts-node: "npm:^10.7.0"
     tsup: "npm:^7.2.0"
@@ -6328,10 +6328,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"superstruct@npm:^1.0.3":
-  version: 1.0.4
-  resolution: "superstruct@npm:1.0.4"
-  checksum: 10/9b3fd70a08c5ad3ea78b5c6b7ab90d31dde71af10448208d296c3d29ba2e55dfd817dfef75957163ee032163d04c4b2e0cb2fddff30313516aa60f748c1a48da
+"superstruct@npm:1.0.3":
+  version: 1.0.3
+  resolution: "superstruct@npm:1.0.3"
+  checksum: 10/632b6171ac136b6750e62a55f806cc949b3dbf2b4a7dc70cc85f54adcdf19d21eab9711f04e8a643b7dd622bbd8658366ead924f467adaccb2c8005c133b7976
   languageName: node
   linkType: hard
 
