@@ -11,8 +11,11 @@ import {
 } from 'superstruct';
 
 import { CaipAssetTypeOrIdStruct } from './caip-types';
+import { StringNumberStruct } from './types';
 
-export const AmountStruct = object({});
+export const AmountStruct = object({
+  amount: StringNumberStruct,
+});
 
 const CommonHeader = {
   jsonrpc: literal('2.0'),
