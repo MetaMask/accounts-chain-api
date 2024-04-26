@@ -10,7 +10,7 @@ import {
   literal,
 } from 'superstruct';
 
-import { CaipAssetTypeStruct } from './caip-types';
+import { CaipAssetTypeOrIdStruct } from './caip-types';
 
 export const AmountStruct = object({});
 
@@ -28,14 +28,14 @@ export const GetBalancesRequestStruct = object({
   params: object({
     scope: CaipChainIdStruct,
     accounts: array(string()),
-    assets: array(CaipAssetTypeStruct),
+    assets: array(CaipAssetTypeOrIdStruct),
   }),
 });
 
 export type GetBalancesRequest = Infer<typeof GetBalancesRequestStruct>;
 
 export const GetBalancesResponseStruct = object({
-  balances: record(string(), record(CaipAssetTypeStruct, AmountStruct)),
+  balances: record(string(), record(CaipAssetTypeOrIdStruct, AmountStruct)),
 });
 
 export type GetBalancesResponse = Infer<typeof GetBalancesResponseStruct>;
