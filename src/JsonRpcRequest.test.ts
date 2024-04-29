@@ -56,4 +56,15 @@ describe('JsonRpcRequestStruct', () => {
 
     expect(is(request, JsonRpcRequestStruct)).toBe(false);
   });
+
+  it('should not be a valid JsonRpcRequest if ID is undefined', () => {
+    const request = {
+      jsonrpc: '2.0',
+      id: undefined,
+      method: 'my_method',
+      params: [1, 2, 3],
+    };
+
+    expect(is(request, JsonRpcRequestStruct)).toBe(false);
+  });
 });
