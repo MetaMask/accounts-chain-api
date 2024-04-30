@@ -1,9 +1,5 @@
-/**
- * Example function that returns a greeting for the given name.
- *
- * @param name - The name to greet.
- * @returns The greeting.
- */
-export default function greeter(name: string): string {
-  return `Hello, ${name}!`;
-}
+export * from './api';
+export * from './types';
+export * from './caip-types';
+export * from './rpc-handler';
+export * from './rpc-types';

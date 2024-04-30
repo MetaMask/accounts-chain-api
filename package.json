@@ -40,6 +40,13 @@
     "test": "jest && jest-it-up",
     "test:watch": "jest --watch"
   },
+  "resolutions": {
+    "superstruct@^1.0.3": "1.0.3"
+  },
+  "dependencies": {
+    "@metamask/utils": "^8.4.0",
+    "superstruct": "1.0.3"
+  },
   "devDependencies": {
     "@lavamoat/allow-scripts": "^3.0.0",
     "@lavamoat/preinstall-always-fail": "^2.0.0",
