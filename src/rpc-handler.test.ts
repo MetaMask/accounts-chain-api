@@ -1,4 +1,5 @@
-import type { JsonRpcRequest } from './JsonRpcRequest';
+import type { JsonRpcRequest } from '@metamask/utils';
+
 import {
   ChainRpcMethod,
   isChainRpcMethod,
@@ -92,7 +93,7 @@ describe('rpc-handler', () => {
 
     chain.getBalances.mockResolvedValue([]);
     await expect(handleChainRequest(chain, request)).rejects.toThrow(
-      'At path: id -- Expected the value to satisfy a union of `string | number | literal`, but received: true',
+      'At path: id -- Expected the value to satisfy a union of `number | string`, but received: true',
     );
   });
 
