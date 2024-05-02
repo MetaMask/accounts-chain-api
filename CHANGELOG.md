@@ -7,4 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/MetaMask/chain-api/
+## [0.0.1]
+
+### Added
+
+- Add `chain_getBalances` method ([#1](https://github.com/MetaMask/chain-api/pull/1))
+
+[Unreleased]: https://github.com/MetaMask/chain-api/compare/v0.0.1...HEAD
+[0.0.1]: https://github.com/MetaMask/chain-api/releases/tag/v0.0.1
