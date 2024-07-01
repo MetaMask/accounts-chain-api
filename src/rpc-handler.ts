@@ -1,6 +1,6 @@
 import { JsonRpcRequestStruct } from '@metamask/utils';
 import type { Json, JsonRpcRequest, CaipChainId } from '@metamask/utils';
-import { assert } from 'superstruct';
+import { assert } from '@metamask/superstruct';
 
 import type { Chain } from './api';
 import { GetBalancesRequestStruct } from './rpc-types';
