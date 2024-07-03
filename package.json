@@ -1,6 +1,6 @@
 {
   "name": "@metamask/chain-api",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "The MetaMask chain-agnostic API",
   "homepage": "https://github.com/MetaMask/chain-api#readme",
   "bugs": {
